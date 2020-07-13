@@ -7,6 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,19 +21,20 @@ import lombok.NoArgsConstructor;
 @Builder
 @Data
 public class Usuario {
-		
+
 	@Id
 	@Column(name = "id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	@Column(name = "nome")
 	private String nome;
-	
+
 	@Column(name = "email")
 	private String email;
-	
+
 	@Column(name = "senha")
+	@JsonIgnore
 	private String senha;
 
 	/*
@@ -70,6 +73,5 @@ public class Usuario {
 	 * @Override public String toString() { return "Usuario [id=" + id + ", nome=" +
 	 * nome + ", email=" + email + ", senha=" + senha + "]"; }
 	 */
-	
-	
+
 }
