@@ -120,7 +120,6 @@ public class UsuarioResourceTest {
 		String json = new ObjectMapper().writeValueAsString(dto);
 
 		// execução e verificação
-		// execução e verificação
 		MockHttpServletRequestBuilder request = MockMvcRequestBuilders.post(API).accept(JSON).contentType(JSON)
 				.content(json);
 
